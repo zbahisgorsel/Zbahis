@@ -10,33 +10,76 @@
   <style>
     :root { --bg:#0b2434; --bg-2:#0f2f45; --text:#eaf6ff; --muted:#a8c5d6; --cyan:#1ee3ff; --shadow:0 10px 30px rgba(0,0,0,.35); --radius:18px; }
     *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:
-      radial-gradient(1200px 800px at 80% -10%, rgba(30,227,255,.08), transparent),
-      radial-gradient(800px 600px at -20% 120%, rgba(255,77,90,.08), transparent),
-      var(--bg);color:var(--text)}
+    body{
+      margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      background:
+        radial-gradient(1200px 800px at 80% -10%, rgba(30,227,255,.08), transparent),
+        radial-gradient(800px 600px at -20% 120%, rgba(255,77,90,.08), transparent),
+        var(--bg);
+      color:var(--text)
+    }
     .container{max-width:1080px;margin:0 auto;padding:28px 20px 64px}
     .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:32px}
     .brand{display:flex;align-items:center;gap:14px;text-decoration:none}
     .brand img{height:36px;filter:drop-shadow(0 3px 10px rgba(0,0,0,.35))}
     .brand-name{font-weight:800;letter-spacing:.2px;font-size:18px}
-    .pill{padding:8px 12px;border-radius:999px;background:linear-gradient(180deg, var(--bg-2), rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.06);color:var(--muted);font-size:13px}
+    .pill{padding:8px 12px;border-radius:999px;background:linear-gradient(180deg,var(--bg-2),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.06);color:var(--muted);font-size:13px}
+
     .hero{display:grid;gap:18px;margin-top:12px;margin-bottom:22px}
     h1{font-size:clamp(28px,4vw,44px);line-height:1.1;margin:0;font-weight:800}
     .subtitle{font-size:clamp(16px,2.2vw,20px);color:var(--muted);margin:0}
 
-    .card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:18px 26px;box-shadow:var(--shadow)}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:18px 26px;box-shadow:var(--shadow)}
     .row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
     .badge{font-weight:700;color:#00141d;background:var(--cyan);padding:6px 10px;border-radius:999px;font-size:13px}
     .chip{padding:8px 12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:12px;color:var(--muted);font-size:13px}
 
     .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px;margin-top:18px}
-    .item-card{grid-column:span 12;background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);display:grid;gap:12px;place-items:center;text-align:center}
-    .item-preview img{width:104px;height:auto;border-radius:12px;display:block}
+    .item-card{
+      position:relative; /* hover panel konumlandırma */
+      grid-column:span 12;
+      background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:var(--shadow);
+      display:grid;gap:12px;place-items:center;text-align:center
+    }
     .item-head{display:flex;align-items:center;gap:10px;justify-content:space-between;width:100%}
     .item-title{margin:0;font-size:18px;font-weight:800}
     .item-desc{margin:0;color:var(--muted);font-size:14px}
-    .download-btn{display:inline-flex;align-items:center;gap:12px;text-decoration:none;background:linear-gradient(180deg, #20d1e6, #16b2c7);color:#00141d;font-weight:800;letter-spacing:.2px;padding:12px 20px;border-radius:16px;box-shadow:0 12px 24px rgba(22,178,199,.35);border:1px solid rgba(255,255,255,.25);transition:transform .18s ease, box-shadow .18s ease, filter .18s ease}
+
+    /* İndir butonu */
+    .download-btn{
+      display:inline-flex;align-items:center;gap:12px;text-decoration:none;
+      background:linear-gradient(180deg,#20d1e6,#16b2c7);color:#00141d;font-weight:800;
+      letter-spacing:.2px;padding:12px 20px;border-radius:16px;border:1px solid rgba(255,255,255,.25);
+      box-shadow:0 12px 24px rgba(22,178,199,.35);transition:transform .18s, box-shadow .18s, filter .18s
+    }
     .download-btn:hover{transform:translateY(-2px);box-shadow:0 16px 32px rgba(22,178,199,.45);filter:saturate(1.05)}
+
+    /* --- HOVER PREVIEW PANEL --- */
+    .preview-pop{
+      position:absolute; left:50%; top:-10px; transform:translate(-50%,-100%) scale(.98);
+      background:rgba(10,22,33,.96);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:14px; padding:10px; box-shadow:0 14px 30px rgba(0,0,0,.45);
+      opacity:0; pointer-events:none; transition:opacity .18s ease, transform .18s ease;
+      backdrop-filter: blur(6px);
+    }
+    .preview-pop img{max-width:260px;max-height:180px;border-radius:10px;display:block}
+    /* küçük ok */
+    .preview-pop::after{
+      content:""; position:absolute; left:50%; bottom:-8px; transform:translateX(-50%);
+      width:14px;height:14px; background:rgba(10,22,33,.96);
+      border-left:1px solid rgba(255,255,255,.10); border-bottom:1px solid rgba(255,255,255,.10);
+      transform-origin:center; transform:translateX(-50%) rotate(45deg);
+      border-radius:2px;
+    }
+    /* hover veya focus-within ile görünür */
+    .item-card:hover .preview-pop,
+    .item-card:focus-within .preview-pop{opacity:1; transform:translate(-50%,-110%) scale(1)}
+
     @media (min-width:680px){.item-card{grid-column:span 6}}
     @media (min-width:980px){.item-card{grid-column:span 4}}
     footer{margin-top:40px;display:flex;justify-content:space-between;align-items:center;gap:12px;color:var(--muted);font-size:13px}
@@ -46,10 +89,7 @@
 <body>
   <div class="container">
     <header class="nav" aria-label="Üst gezinme">
-      <a class="brand" href="#" aria-label="Zbahis ana sayfa">
-        <img src="logo%20color%20-%20light.png" alt="zbahis.com logosu" />
-        <span class="brand-name">Marketing</span>
-      </a>
+      <a class="brand" href="#"><img src="logo%20color%20-%20light.png" alt="zbahis.com logosu" /><span class="brand-name">Marketing</span></a>
       <div class="pill" id="clock">--:--</div>
     </header>
 
@@ -67,36 +107,41 @@
     </section>
 
     <section class="grid" aria-label="İndirme kartları">
+      <!-- LOGO -->
       <div class="item-card">
-        <div class="item-preview"><img src="Logo%20%C3%B6nizleme.png" alt="Logo önizleme"></div>
+        <div class="preview-pop"><img src="Logo%20%C3%B6nizleme.png" alt="Logo önizleme"></div>
         <div class="item-head"><h3 class="item-title">Zbahis Logo</h3><span class="chip" id="ver-logo">v1.0.0</span></div>
         <p class="item-desc">PNG, SVG, PDF logo seti.</p>
         <a class="download-btn" id="btn-logo" href="#" download>İndir</a>
       </div>
 
+      <!-- ICON -->
       <div class="item-card">
-        <div class="item-preview"><img src="icon%20%C3%B6nizleme.png" alt="Icon önizleme"></div>
+        <div class="preview-pop"><img src="icon%20%C3%B6nizleme.png" alt="Icon önizleme"></div>
         <div class="item-head"><h3 class="item-title">Zbahis Icon</h3><span class="chip" id="ver-icon">v1.0.0</span></div>
         <p class="item-desc">Favikon ve app icon boyutları.</p>
         <a class="download-btn" id="btn-icon" href="#" download>İndir</a>
       </div>
 
+      <!-- GIF -->
       <div class="item-card">
-        <div class="item-preview"><img src="Gif%20%C3%B6nizleme.gif" alt="GIF önizleme"></div>
+        <div class="preview-pop"><img src="Gif%20%C3%B6nizleme.gif" alt="GIF önizleme"></div>
         <div class="item-head"><h3 class="item-title">Zbahis GIF</h3><span class="chip" id="ver-gif">v1.0.0</span></div>
         <p class="item-desc">Animasyonlu GIF paketleri.</p>
         <a class="download-btn" id="btn-gif" href="#" download>İndir</a>
       </div>
 
+      <!-- FLASH GIF -->
       <div class="item-card">
-        <div class="item-preview"><img src="Flash%20gif%20%C3%B6n%20izleme.gif" alt="Flash GIF önizleme"></div>
+        <div class="preview-pop"><img src="Flash%20gif%20%C3%B6n%20izleme.gif" alt="Flash GIF önizleme"></div>
         <div class="item-head"><h3 class="item-title">Zbahis Flash GIF</h3><span class="chip" id="ver-flash">v1.0.0</span></div>
         <p class="item-desc">Flaş efektli animasyonlar.</p>
         <a class="download-btn" id="btn-flash" href="#" download>İndir</a>
       </div>
 
+      <!-- BONUS -->
       <div class="item-card">
-        <div class="item-preview"><img src="Bonus%20%C3%B6nizleme.jpg" alt="Bonus görseller önizleme"></div>
+        <div class="preview-pop"><img src="Bonus%20%C3%B6nizleme.jpg" alt="Bonus görseller önizleme"></div>
         <div class="item-head"><h3 class="item-title">Zbahis Bonus Görseller</h3><span class="chip" id="ver-bonus">v1.0.0</span></div>
         <p class="item-desc">Bonus kampanya görselleri seti.</p>
         <a class="download-btn" id="btn-bonus" href="#" download>İndir</a>
@@ -112,11 +157,15 @@
   <script>
     const clockEl=document.getElementById('clock');
     function pad(n){return n.toString().padStart(2,'0')}
-    function tick(){const d=new Date();const mon=['Oca','Şub','Mar','Nis','May','Haz','Tem','Ağu','Eyl','Eki','Kas','Ara'];clockEl.textContent=`${d.getDate()} ${mon[d.getMonth()]} ${d.getFullYear()} · ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`}
-    setInterval(tick,1000);tick();
+    function tick(){
+      const d=new Date();
+      const mon=['Oca','Şub','Mar','Nis','May','Haz','Tem','Ağu','Eyl','Eki','Kas','Ara'];
+      clockEl.textContent=`${d.getDate()} ${mon[d.getMonth()]} ${d.getFullYear()} · ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
+    }
+    setInterval(tick,1000); tick();
     document.getElementById('year').textContent=new Date().getFullYear();
 
-    // İndirme linkleri (senin önceki URL'lerin)
+    // İndirme linkleri
     document.getElementById('btn-logo').href  = 'https://raw.githubusercontent.com/zbahisgorsel/Zbahis/main/Zbahis%20Logo%20Set.zip';
     document.getElementById('btn-icon').href  = 'https://raw.githubusercontent.com/zbahisgorsel/Zbahis/main/Zbahis%20İcon%20Set.zip';
     document.getElementById('btn-gif').href   = 'https://github.com/zbahisgorsel/Zbahis/releases/latest/download/Zbahis.Gif.Tum.Boyutlar.zip';
