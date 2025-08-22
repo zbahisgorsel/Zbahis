@@ -3,111 +3,56 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Zbahis Marketing – İndir</title>
-  <meta name="description" content="Zbahis Marketing dünyasına hoş geldiniz. Tüm görsel ihtiyaçlarınız tek klasörde. En güncel ZIP paketini indirin."/>
+  <title>Zbahis Marketing – Paketler</title>
+  <meta name="description" content="Zbahis Marketing: Logo, Icon, GIF, Flash GIF ve Bonus Görseller paketlerini tek tıkla indirin."/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      /* Palet, verdiğiniz görselden türetildi */
-      --bg: #0b2434;         /* koyu lacivert arka plan */
-      --bg-2: #0f2f45;       /* biraz daha açık lacivert */
-      --text: #eaf6ff;       /* açık metin rengi */
-      --muted: #a8c5d6;      
-      --cyan: #1ee3ff;       /* turkuaz/cyan vurgu */
-      --red: #ff4d5a;        /* kırmızı vurgu */
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --radius: 18px;
+      --bg: #0b2434; --bg-2: #0f2f45; --text: #eaf6ff; --muted: #a8c5d6;
+      --cyan: #1ee3ff; --red: #ff4d5a; --shadow: 0 10px 30px rgba(0,0,0,.35); --radius: 18px;
     }
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
-      background: radial-gradient(1200px 800px at 80% -10%, rgba(30,227,255,.08), transparent),
-                  radial-gradient(800px 600px at -20% 120%, rgba(255,77,90,.08), transparent),
-                  var(--bg);
-      color: var(--text);
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-    .container { max-width: 1080px; margin: 0 auto; padding: 28px 20px 64px; }
-
-    /* Header */
-    .nav {
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 16px; margin-bottom: 32px;
-    }
-    .brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
-    .brand img {
-      height: 36px; width: auto; display: block;
-      filter: drop-shadow(0 3px 10px rgba(0,0,0,.35));
-    }
-    .brand-name { font-weight: 800; letter-spacing: .2px; font-size: 18px; color: var(--text); opacity: .9; }
-
-    .pill {
-      display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px;
-      background: linear-gradient(180deg, var(--bg-2), rgba(255,255,255,.04)); border: 1px solid rgba(255,255,255,.06);
-      color: var(--muted); font-size: 13px;
-    }
-    .flag { width: 18px; height: 18px; border-radius: 4px; background: linear-gradient(180deg, #e30a17 0 50%, #fff 50%); box-shadow: inset 0 0 0 1px rgba(0,0,0,.15); }
-
-    /* Hero */
-    .hero {
-      display: grid; gap: 18px; margin-top: 12px; margin-bottom: 28px;
-    }
-    h1 { font-size: clamp(28px, 4vw, 44px); line-height: 1.1; margin: 0; font-weight: 800; }
-    .subtitle { font-size: clamp(16px, 2.2vw, 20px); color: var(--muted); margin: 0; }
-
-    /* Download Card */
-    .card {
-      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: var(--radius);
-      padding: 26px; display: grid; gap: 18px; box-shadow: var(--shadow);
-    }
-    .row { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
-    .badge { font-weight: 700; color: #00141d; background: var(--cyan); padding: 6px 10px; border-radius: 999px; font-size: 13px; }
-
-    .download-btn {
-      --size: 64px; --padx: 20px; --pady: 14px;
-      display: inline-flex; align-items: center; gap: 12px; text-decoration: none;
-      background: linear-gradient(180deg, #20d1e6, #16b2c7);
-      color: #00141d; font-weight: 800; letter-spacing: .2px;
-      padding: var(--pady) var(--padx); border-radius: 16px; box-shadow: 0 12px 24px rgba(22,178,199,.35);
-      border: 1px solid rgba(255,255,255,.25);
-      transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
-    }
-    .download-btn:hover { transform: translateY(-2px); box-shadow: 0 16px 32px rgba(22,178,199,.45); filter: saturate(1.05); }
-    .download-btn:active { transform: translateY(0); }
-    .icon-wrap {
-      width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center;
-      background: rgba(255,255,255,.9);
-    }
-    .download-btn svg { width: 22px; height: 22px; }
-
-    .note { color: var(--muted); font-size: 14px; }
-
-    /* Footer */
-    footer { margin-top: 40px; display: flex; justify-content: space-between; align-items: center; gap: 12px; color: var(--muted); font-size: 13px; }
-
-    /* Utilities */
-    .spacer { flex: 1; }
-    .chip { padding: 8px 12px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.08); border-radius: 12px; color: var(--muted); font-size: 13px; }
-
-    @media (max-width: 520px) {
-      .download-btn { width: 100%; justify-content: center; }
-      .pill { display: none; }
-    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,"Noto Sans","Apple Color Emoji","Segoe UI Emoji";background:radial-gradient(1200px 800px at 80% -10%, rgba(30,227,255,.08), transparent),radial-gradient(800px 600px at -20% 120%, rgba(255,77,90,.08), transparent),var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+    .container{max-width:1080px;margin:0 auto;padding:28px 20px 64px}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:32px}
+    .brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+    .brand img{height:36px;width:auto;display:block;filter:drop-shadow(0 3px 10px rgba(0,0,0,.35))}
+    .brand-name{font-weight:800;letter-spacing:.2px;font-size:18px;color:var(--text);opacity:.9}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:linear-gradient(180deg, var(--bg-2), rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.06);color:var(--muted);font-size:13px}
+    .flag{width:18px;height:18px;border-radius:4px;background:linear-gradient(180deg, #e30a17 0 50%, #fff 50%);box-shadow:inset 0 0 0 1px rgba(0,0,0,.15)}
+    .hero{display:grid;gap:18px;margin-top:12px;margin-bottom:28px}
+    h1{font-size:clamp(28px,4vw,44px);line-height:1.1;margin:0;font-weight:800}
+    .subtitle{font-size:clamp(16px,2.2vw,20px);color:var(--muted);margin:0}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:26px;display:grid;gap:18px;box-shadow:var(--shadow)}
+    .row{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+    .badge{font-weight:700;color:#00141d;background:var(--cyan);padding:6px 10px;border-radius:999px;font-size:13px}
+    .download-btn{display:inline-flex;align-items:center;gap:12px;text-decoration:none;background:linear-gradient(180deg, #20d1e6, #16b2c7);color:#00141d;font-weight:800;letter-spacing:.2px;padding:14px 20px;border-radius:16px;box-shadow:0 12px 24px rgba(22,178,199,.35);border:1px solid rgba(255,255,255,.25);transition:transform .18s ease, box-shadow .18s ease, filter .18s ease}
+    .download-btn:hover{transform:translateY(-2px);box-shadow:0 16px 32px rgba(22,178,199,.45);filter:saturate(1.05)}
+    .icon-wrap{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:rgba(255,255,255,.9)}
+    .download-btn svg{width:22px;height:22px}
+    .note{color:var(--muted);font-size:14px}
+    footer{margin-top:40px;display:flex;justify-content:space-between;align-items:center;gap:12px;color:var(--muted);font-size:13px}
+    .spacer{flex:1}
+    .chip{padding:8px 12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:12px;color:var(--muted);font-size:13px}
+    /* GRID + ITEMS */
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+    .item-card{grid-column:span 12;background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);display:grid;gap:12px}
+    .item-head{display:flex;align-items:center;gap:10px;justify-content:space-between}
+    .item-title{margin:0;font-size:18px;font-weight:800}
+    .item-desc{margin:0;color:var(--muted);font-size:14px}
+    .item-btn{width:100%;justify-content:center;margin-top:8px}
+    @media (min-width:680px){.item-card{grid-column:span 6}}
+    @media (min-width:980px){.item-card{grid-column:span 4}}
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- ÜST BAR / LOGO -->
     <header class="nav" aria-label="Üst gezinme">
       <a class="brand" href="#" aria-label="Zbahis ana sayfa">
-        <!-- LOGO: Aşağıdaki src'yi kendi logo dosyanızla değiştirin. Örn: /assets/zbahis-logo.svg -->
-       <img src="logo%20color%20-%20light.png" alt="zbahis.com logosu" />
+        <!-- LOGO: repodaki dosya adı -->
+        <img src="logo%20color%20-%20light.png" alt="zbahis.com logosu" />
         <span class="brand-name">Marketing</span>
       </a>
       <div class="spacer"></div>
@@ -117,37 +62,63 @@
       </div>
     </header>
 
-    <!-- HERO -->
     <section class="hero">
       <h1>Zbahis Marketing dünyasına hoş geldiniz</h1>
       <p class="subtitle">Tüm görsel ihtiyaçlarınız <strong>tek klasörde</strong>.</p>
     </section>
 
-    <!-- DOWNLOAD CARD -->
-    <section class="card" aria-label="İndirme alanı">
-      <div class="row">
-        <span class="badge" aria-label="güncel paket">Güncel Paket</span>
-        <span class="chip">ZIP</span>
-        <span class="chip" id="ver">v1.0.0</span>
-        <span class="chip" id="upd">Son güncelleme: bugün</span>
+    <section aria-label="İndirme alanı">
+      <div class="card" style="margin-bottom:18px">
+        <div class="row">
+          <span class="badge">Güncel Paketler</span>
+          <span class="chip">ZIP</span>
+          <span class="chip" id="upd">Son güncelleme: bugün</span>
+        </div>
+        <p class="note" style="margin-top:0">Her buton farklı bir paketi indirir. Linkleri yalnızca bir kez paylaşmanız yeterlidir.</p>
       </div>
 
-      <!--
-        İNDİRME LİNKİ:
-        Aşağıdaki href'i kendi ZIP dosyanızın adresiyle değiştirin.
-        Örn (GitHub Releases “latest”):
-        https://github.com/OWNER/REPO/releases/latest/download/bayi-paketi.zip
-      -->
-      <a class="download-btn" id="download" href="https://example.com/zbahis-marketing-paketi.zip" download>
-        <span class="icon-wrap" aria-hidden="true">
-          <!-- ok ikonu -->
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M12 3v12m0 0 5-5m-5 5-5-5" stroke="#0b2434" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>
-        <span>İndir</span>
-      </a>
-      <p class="note">Bu buton, her zaman en güncel dosyayı indirir. Linki yalnızca bir kez paylaşmanız yeterlidir.</p>
+      <div class="grid">
+        <div class="item-card">
+          <div class="item-head"><h3 class="item-title">Zbahis Logo</h3><span class="chip" id="ver-logo">v1.0.0</span></div>
+          <p class="item-desc">PNG, SVG, PDF logo seti.</p>
+          <a class="download-btn item-btn" id="btn-logo" href="#" download>
+            <span class="icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3v12m0 0 5-5m-5 5-5-5" stroke="#0b2434" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span>İndir</span>
+          </a>
+        </div>
+        <div class="item-card">
+          <div class="item-head"><h3 class="item-title">Zbahis Icon</h3><span class="chip" id="ver-icon">v1.0.0</span></div>
+          <p class="item-desc">Favikon ve app icon boyutları.</p>
+          <a class="download-btn item-btn" id="btn-icon" href="#" download>
+            <span class="icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3v12m0 0 5-5m-5 5-5-5" stroke="#0b2434" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span>İndir</span>
+          </a>
+        </div>
+        <div class="item-card">
+          <div class="item-head"><h3 class="item-title">Zbahis GIF</h3><span class="chip" id="ver-gif">v1.0.0</span></div>
+          <p class="item-desc">Animasyonlu GIF paketleri.</p>
+          <a class="download-btn item-btn" id="btn-gif" href="#" download>
+            <span class="icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3v12m0 0 5-5m-5 5-5-5" stroke="#0b2434" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span>İndir</span>
+          </a>
+        </div>
+        <div class="item-card">
+          <div class="item-head"><h3 class="item-title">Zbahis Flash GIF</h3><span class="chip" id="ver-flash">v1.0.0</span></div>
+          <p class="item-desc">Flaş efektli animasyonlar.</p>
+          <a class="download-btn item-btn" id="btn-flash" href="#" download>
+            <span class="icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3v12m0 0 5-5m-5 5-5-5" stroke="#0b2434" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span>İndir</span>
+          </a>
+        </div>
+        <div class="item-card">
+          <div class="item-head"><h3 class="item-title">Zbahis Bonus Görseller</h3><span class="chip" id="ver-bonus">v1.0.0</span></div>
+          <p class="item-desc">Bonus kampanya görselleri seti.</p>
+          <a class="download-btn item-btn" id="btn-bonus" href="#" download>
+            <span class="icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3v12m0 0 5-5m-5 5-5-5" stroke="#0b2434" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span>İndir</span>
+          </a>
+        </div>
+      </div>
     </section>
 
     <footer>
@@ -157,28 +128,22 @@
   </div>
 
   <script>
-    // Basit saat & tarih – görseldeki gibi yerel saati gösterir
     const clockEl = document.getElementById('clock');
-    function pad(n){ return n.toString().padStart(2,'0'); }
-    function tick(){
-      const d = new Date();
-      const dayNames = ['Paz','Pts','Sal','Çar','Per','Cum','Cts'];
-      const monNames = ['Oca','Şub','Mar','Nis','May','Haz','Tem','Ağu','Eyl','Eki','Kas','Ara'];
-      const str = `${d.getDate()} ${monNames[d.getMonth()]} ${d.getFullYear()} · ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
-      clockEl.textContent = str;
-    }
-    setInterval(tick, 1000); tick();
+    function pad(n){return n.toString().padStart(2,'0')} 
+    function tick(){const d=new Date();const mon=['Oca','Şub','Mar','Nis','May','Haz','Tem','Ağu','Eyl','Eki','Kas','Ara'];clockEl.textContent=`${d.getDate()} ${mon[d.getMonth()]} ${d.getFullYear()} · ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`}
+    setInterval(tick,1000);tick();
+    document.getElementById('year').textContent=new Date().getFullYear();
 
-    // Yıl
-    document.getElementById('year').textContent = new Date().getFullYear();
+    // === INDİRME LİNKLERİ ===
+    // GIF: Releases (latest), diğerleri: repo kökünden RAW
+    document.getElementById('btn-logo').href  = 'https://raw.githubusercontent.com/zbahisgorsel/Zbahis/main/Zbahis%20Logo%20Set.zip';
+    document.getElementById('btn-icon').href  = 'https://raw.githubusercontent.com/zbahisgorsel/Zbahis/main/Zbahis%20icon%20Set.zip';
+    document.getElementById('btn-gif').href   = 'https://github.com/zbahisgorsel/Zbahis/releases/latest/download/Zbahis.Gif.Tum.Boyutlar.zip';
+    document.getElementById('btn-flash').href = 'https://raw.githubusercontent.com/zbahisgorsel/Zbahis/main/Zbahi%20Flash%20Gif.zip';
+    document.getElementById('btn-bonus').href = 'https://raw.githubusercontent.com/zbahisgorsel/Zbahis/main/Zbahis%20Bonus%20G%C3%B6rseller.zip';
 
-    // Örnek: Versiyon/tarih metinlerini kolay güncellemek için aşağıyı düzenleyin
-    // document.getElementById('ver').textContent = 'v1.2.3';
-    // document.getElementById('upd').textContent = 'Son güncelleme: 22 Ağu 2025';
-
-    // İpucu: ZIP linkine UTM ekleyin (bayi takibi için)
-    // const a = document.getElementById('download');
-    // a.href = 'https://github.com/OWNER/REPO/releases/latest/download/bayi-paketi.zip?utm_source=bayi&utm_medium=link&utm_campaign=marketing';
+    // İsteğe bağlı sürüm notları
+    // document.getElementById('ver-logo').textContent  = 'v1.1.0';
   </script>
 </body>
 </html>
